@@ -22,6 +22,10 @@ export default new Vuex.Store({
     removeTodo({state}, index) {
       state.todos.splice(index, 1);
       localStorage.setItem('todos', JSON.stringify(state.todos));
+    },
+    editTodo({state}, data) {
+      state.todos[data.index] = data.todo;
+      localStorage.setItem('todos', JSON.stringify(state.todos));
     }
   }
 })
